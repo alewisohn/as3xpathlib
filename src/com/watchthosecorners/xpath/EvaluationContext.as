@@ -21,6 +21,40 @@
  */ 
 package com.watchthosecorners.xpath
 {
+
+/**
+ * Expression evaluation occurs with respect to a context. The context consists 
+ * of:
+ * <ul>
+ * <li>a node (the context node)</li>
+ * <li>a pair of non-zero positive integers (the context position and the 
+ * 		context size)</li>
+ * <li>a set of variable bindings</li>
+ * <li>a function library</li>
+ * <li>the set of namespace declarations in scope for the expression</li>
+ * </ul>
+ * 
+ * The context position is always less than or equal to the context size.
+ *
+ * The variable bindings consist of a mapping from variable names to variable 
+ * values. The value of a variable is an object, which can be of any of the 
+ * types that are possible for the value of an expression, and may also be of 
+ * additional types not specified here.
+ * 
+ * The function library consists of a mapping from function names to functions. 
+ * Each function takes zero or more arguments and returns a single result. 
+ * For a function in the core function library, arguments and result are of the 
+ * four basic types.
+ * 
+ * The namespace declarations consist of a mapping from prefixes to namespace 
+ * URIs.
+ * 
+ * <p>
+ * <b>Author:</b> Andrew Lewisohn<br/>
+ * <b>Version:</b> $Revision$, $Date$, $Author$<br/>
+ * <b>Since:</b> 1.0
+ * </p>
+ */		
 public class EvaluationContext
 {
 	//--------------------------------------------------------------------------
