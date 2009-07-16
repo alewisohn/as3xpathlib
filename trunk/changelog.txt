@@ -1,0 +1,14 @@
+# Author: Andrew Lewisohn
+# Version: $Revision: 168 $, $Date: 2009-02-05 10:22:32 -0500 (Thu, 05 Feb 2009) $, $Author: cherreman $
+# Since: 1.0
+
+AS3 XPATH LIBRARY CHANGELOG
+=============================
+
+Note: dates are in MM.DD.YYYY format
+
+Changes in version 1.0 (7.16.2009)
+---------------------------------
+
+General
+* Initial Release
