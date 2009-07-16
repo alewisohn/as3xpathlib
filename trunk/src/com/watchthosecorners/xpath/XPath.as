@@ -25,7 +25,19 @@ import com.watchthosecorners.xpath.parser.Parser;
 
 import org.as3commons.logging.ILogger;
 import org.as3commons.logging.LoggerFactory;
-	
+
+/**
+ * The XPath class is the entry point for an XPath query. 
+ * 
+ * It supports instance and static methods for evaluating an expression, 
+ * selecting a single node, and retrieving the nodes referenced by an expression.
+ *  
+ * <p>
+ * <b>Author:</b> Andrew Lewisohn<br/>
+ * <b>Version:</b> $Revision$, $Date$, $Author$<br/>
+ * <b>Since:</b> 1.0
+ * </p>
+ */	
 public class XPath
 {
 	//--------------------------------------------------------------------------
@@ -135,7 +147,8 @@ public class XPath
 	 * 
 	 * @param source The XPath expression.
 	 * 
-	 * @param context The evaluation context for the XPath expression.
+	 * @param context The evaluation context for the XPath expression Can be 
+	 * 			either an XML node or an instance of EvaluationContext.
 	 */
 	public function XPath(source:String, context:Object=null)
 	{
