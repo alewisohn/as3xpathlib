@@ -1,0 +1,7 @@
+==================================================================
+Description of AS3 dependencies:
+==================================================================
+
+* as3/as3-commons/bin/as3-commons.swc
+    - as3-commons v1.0.0 (http://code.google.com/p/as3-commons)
+    - Required for building the framework.
