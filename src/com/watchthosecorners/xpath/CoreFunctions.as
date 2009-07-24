@@ -162,7 +162,6 @@ public class CoreFunctions
 				return object as Boolean;
 				
 			case object is NodeSet:
-			case object is Array:
 				return object.length > 0;
 				
 			case object is XMLList:
@@ -376,7 +375,6 @@ public class CoreFunctions
 				return object ? "true" : "false";
 				
 			case object is NodeSet:
-			case object is Array:
 				return object.length > 0 ? XMLUtil.stringValueOf(object[0]) : "";
 				
 			case object is Number:
