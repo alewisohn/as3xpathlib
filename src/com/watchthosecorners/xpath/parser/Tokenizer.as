@@ -136,6 +136,7 @@ public class Tokenizer
 			regexList[regexList.length] = createRegExpEntry(TokenType.LEFT_BRACKET);
 			regexList[regexList.length] = createRegExpEntry(TokenType.RIGHT_BRACKET);
 			regexList[regexList.length] = createRegExpEntry(TokenType.DOT_DOT);
+			regexList[regexList.length] = createRegExpEntry(TokenType.NUMBER);
 			regexList[regexList.length] = createRegExpEntry(TokenType.DOT);
 			regexList[regexList.length] = createRegExpEntry(TokenType.ATTRIBUTE_SIGN);
 			regexList[regexList.length] = createRegExpEntry(TokenType.COMMA);
@@ -184,7 +185,6 @@ public class Tokenizer
 			regexList[regexList.length] = createRegExpEntry(TokenType.SELF);
 			
 			regexList[regexList.length] = createRegExpEntry(TokenType.LITERAL);
-			regexList[regexList.length] = createRegExpEntry(TokenType.NUMBER);
 			regexList[regexList.length] = createRegExpEntry(TokenType.VARIABLE_REFERENCE);
 			
 			regexList[regexList.length] = createRegExpEntry(TokenType.END);
