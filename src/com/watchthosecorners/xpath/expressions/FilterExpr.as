@@ -24,6 +24,7 @@ package com.watchthosecorners.xpath.expressions
 import com.watchthosecorners.xpath.Axis;
 import com.watchthosecorners.xpath.EvaluationContext;
 import com.watchthosecorners.xpath.IExpr;
+import com.watchthosecorners.xpath.NodeSet;
 import com.watchthosecorners.xpath.Predicate;
 
 [ExcludeClass]
@@ -105,6 +106,18 @@ public class FilterExpr extends AbstractExpr
 	override public function evaluate(context:EvaluationContext):*
 	{
 		return _predicate.filter(context, _expression.evaluate(context), Axis.Direction.FORWARD);	
+	}
+	
+	/**
+	 * @inheritDoc
+	 */
+	override public function referencedNodes(context:EvaluationContext):NodeSet
+	{
+		var nodeSet:NodeSet = super.referencedNodes(context);
+		var predicateContext:EvaluationContext = context.clone();
+		predicateContext.node = nodeSet[0];
+		nodeSet.addAll(_predicate.expression.referencedNodes(predicateContext));
+		return nodeSet;
 	}
 }
 }

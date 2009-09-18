@@ -23,6 +23,8 @@ package com.watchthosecorners.xpath.expressions
 {
 import com.watchthosecorners.xpath.EvaluationContext;
 import com.watchthosecorners.xpath.IExpr;
+import com.watchthosecorners.xpath.NodeSet;
+import com.watchthosecorners.xpath.Step;
 
 [ExcludeClass]
 	
@@ -101,6 +103,29 @@ public class PathExpr extends AbstractExpr
 	override public function evaluate(context:EvaluationContext):*
 	{
 		return _locationPath.filter(context, _filterExpr.evaluate(context)); 
+	}
+	
+	/**
+	 * @inheritDoc
+	 */
+	override public function referencedNodes(context:EvaluationContext):NodeSet
+	{
+		var nodeSet:NodeSet = new NodeSet(_filterExpr.referencedNodes(context));
+		var stepLen:uint = _locationPath.steps.length;
+		
+		for(var i:uint = 0; i < stepLen; i++)
+		{
+			var step:Step = _locationPath.steps[i];
+			
+			for(var j:uint = 0; j < step.predicates.length; j++)
+			{
+				nodeSet.addAll(step.predicates[j].expression.referencedNodes(context));	
+			}
+		}
+		
+		nodeSet.addAll(super.referencedNodes(context));
+		
+		return nodeSet;
 	}
 }
 }

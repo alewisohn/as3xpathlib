@@ -7,11 +7,12 @@ AS3 XPATH LIBRARY CHANGELOG
 
 Note: dates are in MM.DD.YYYY format
 
-Changes in version 1.1 (##.##.####)
+Changes in version 1.0.1 (##.##.####)
 ---------------------------------
 
 General
 * Removed Array cases in CoreFunctions.stringFunction() and CoreFunctions.booleanFunction()
+* Refactored convenience method referencedNodes(), which retrieves all unique nodes referenced by an XPath expression
 
 Changes in version 1.0 (07.16.2009)
 ---------------------------------
