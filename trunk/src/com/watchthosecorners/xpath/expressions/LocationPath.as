@@ -149,7 +149,7 @@ public class LocationPath extends AbstractExpr
 				
 			if(step.nodeTest is QNameNodeTest)
 			{
-				execFirstStep = INodeTest(step.nodeTest).test(context, contextNode, null);
+				execFirstStep = (step.nodeTest as INodeTest).test(context, contextNode, null);
 			}
 			else if(step.nodeTest is StarNodeTest
 					&& step.axis == Axis.CHILD)
@@ -169,6 +169,32 @@ public class LocationPath extends AbstractExpr
 		}
 		
 		return filter(context, nodeSet);
+	}
+	
+	/**
+	 * @inheritDoc
+	 */
+	override public function referencedNodes(context:EvaluationContext):NodeSet
+	{
+		var nodeSet:NodeSet = super.referencedNodes(context);
+		var stepLen:uint = _steps.length;
+		
+		for(var i:uint = 0; i < stepLen; i++)
+		{
+			var step:Step = _steps[i];
+			
+			for(var j:uint = 0; j < step.predicates.length; j++)
+			{
+				if(j < nodeSet.length)
+				{
+					var predicateContext:EvaluationContext = context.clone();
+					predicateContext.node = nodeSet[j];
+					nodeSet.addAll(step.predicates[j].expression.referencedNodes(predicateContext));
+				}	
+			}
+		}
+		
+		return nodeSet;
 	}
 
 	//--------------------------------------------------------------------------
