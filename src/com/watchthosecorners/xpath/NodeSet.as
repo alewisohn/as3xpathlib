@@ -33,7 +33,7 @@ public dynamic class NodeSet extends Array
 	 * Constructor.
 	 * 
 	 * @param value Can be either XML or an XMLList with which to prepopulate
-	 * 		the nodeset.
+	 * 		the node-set.
 	 */
 	public function NodeSet(value:Object=null)
 	{
@@ -59,7 +59,7 @@ public dynamic class NodeSet extends Array
 	//--------------------------------------------------------------------------
 	
 	/**
-	 * Add a node to the nodeset.
+	 * Add a node to the node-set.
 	 */
 	public function add(node:XML):void
 	{
@@ -110,11 +110,43 @@ public dynamic class NodeSet extends Array
 	}
 	
 	/**
-	 * Check if the nodeset already contains the given node.
+	 * Evaluates equivalency of two node-sets. Items in the node-set are tested
+	 * by strict equality and in the order in which they appear in the node-set.
+	 */
+	public function equals(nodeSet:NodeSet):Boolean
+	{
+		if(nodeSet == null)
+			return false;
+			
+		if(length != nodeSet.length)
+			return false;	
+			
+		for(var i:uint = 0; i < length; i++)
+		{
+			if(this[i] !== nodeSet[i])
+				return false;
+		}
+		
+		return true;
+	}
+	
+	/**
+	 * Check if the node-set already contains the given node.
 	 */
 	public function contains(node:XML):Boolean
 	{
 		return indexOf(node) > -1;
+	}
+	
+	/**
+	 * Clears the contents of the node-set.
+	 */
+	public function clear():void
+	{
+		while(length > 0)
+		{
+			shift();
+		}
 	}
 }
 }
