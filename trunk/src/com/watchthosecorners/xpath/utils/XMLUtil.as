@@ -20,9 +20,7 @@
  * THE SOFTWARE.
  */ 
 package com.watchthosecorners.xpath.utils
-{
-[ExcludeClass]
-	
+{	
 public class XMLUtil
 {
 	//--------------------------------------------------------------------------
