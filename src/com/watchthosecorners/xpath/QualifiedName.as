@@ -55,6 +55,11 @@ public class QualifiedName
 				}
 				else
 				{
+					if(contextNode == null)
+					{
+						contextNode = EvaluationContext.defaultContextNode;
+					}
+					
 					var ns:Namespace = contextNode.namespace(parts[0].toString()) as Namespace;
 					if(ns == null)
 					{
