@@ -39,17 +39,17 @@ public dynamic class NodeSet extends Array
 	{
 		super();
 		
-		if(value is XML)
-		{
-			add(value as XML);
-		}
-		else if(value is XMLList)
+		if(value is XMLList || value is Array)
 		{
 			for each(var node:XML in value)
 			{
 				add(node);
 			}
 		}
+		else if(value is XML || value is Number || value is String || value is Boolean)
+		{
+			add(value);
+		}		
 	}
 	
 	//--------------------------------------------------------------------------
@@ -61,7 +61,7 @@ public dynamic class NodeSet extends Array
 	/**
 	 * Add a node to the node-set.
 	 */
-	public function add(node:XML):void
+	public function add(node:Object):void
 	{
 		if(node != null && !contains(node))
 		{
@@ -86,7 +86,7 @@ public dynamic class NodeSet extends Array
 	/**
 	 * Add a node without testing for uniqueness.
 	 */
-	public function addUnique(node:XML):NodeSet
+	public function addUnique(node:Object):NodeSet
 	{
 		if(node != null)
 		{
@@ -133,7 +133,7 @@ public dynamic class NodeSet extends Array
 	/**
 	 * Check if the node-set already contains the given node.
 	 */
-	public function contains(node:XML):Boolean
+	public function contains(node:Object):Boolean
 	{
 		return indexOf(node) > -1;
 	}
