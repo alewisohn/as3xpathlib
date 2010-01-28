@@ -5,7 +5,7 @@
 	
 	<parent>
 		<groupId>com.watchthosecorners.xpath</groupId>
-		<artifactId>as3xpath-superpom</artifactId>
+		<artifactId>as3xpath-project</artifactId>
 		<version>1.1.0</version>
 	</parent>
 	
@@ -19,11 +19,6 @@
 	<description>AS3 XPath Extension Function Library</description>
 	<inceptionYear>2009</inceptionYear>
 
-	<properties>
-		<flexunit.version>4.0-rc-1</flexunit.version>
-		<!--<flexunit.version>0.90</flexunit.version>-->
-	</properties>
-	
 	<dependencies>
 		<dependency>
 			<groupId>com.adobe.flex.framework</groupId>
