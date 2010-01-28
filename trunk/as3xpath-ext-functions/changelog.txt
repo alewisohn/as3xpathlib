@@ -1,0 +1,18 @@
+# Author: Andrew Lewisohn
+# Version: $Revision: 10 $, $Date: 2009-09-21 14:05:39 -0400 (Mon, 21 Sep 2009) $, $Author: alewisohn $
+# Since: 1.0
+
+AS3 XPATH EXTENSIONS LIBRARY CHANGELOG
+=============================
+
+Changes in version 1.1.0 (01.15.2010)
+---------------------------------
+
+Package com.watchthosecorners.xpath.ext.functions.exslt
+- added caching of regular expressions based on the pattern and flags
+
+Changes in version 1.0.0 (10.09.2009)
+---------------------------------
+
+General
+* Initial Release
