@@ -7,7 +7,7 @@ AS3 XPATH LIBRARY CHANGELOG
 
 Note: dates are in MM.DD.YYYY format
 
-Changes in version 1.0.1 (##.##.####)
+Changes in version 1.0.1 (01.28.2010)
 ---------------------------------
 
 General
@@ -16,6 +16,7 @@ General
 * Added convenience methods NodeSet.equals() and NodeSet.clear().
 * Modified NodeSet to allow adding of any simple type: Boolean, Number, String, or XML
 * If no contextNode is passed to the QualifiedName#constructor(), the EvaluationContext.defaultContextNode is used to perform namespace lookups.
+* Added Maven Support.
 
 Changes in version 1.0 (07.16.2009)
 ---------------------------------
