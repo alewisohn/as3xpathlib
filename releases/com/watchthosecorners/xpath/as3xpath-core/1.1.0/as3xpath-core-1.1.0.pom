@@ -1,0 +1,91 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<parent>
+		<groupId>com.watchthosecorners.xpath</groupId>
+		<artifactId>as3xpath-superpom</artifactId>
+		<version>1.1.0</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.watchthosecorners.xpath</groupId>
+	<artifactId>as3xpath-core</artifactId>
+	<packaging>swc</packaging>
+	<version>1.1.0</version>
+	<name>AS3 XPath Core Library</name>
+	<description>AS3 XPath Core Library</description>
+	<inceptionYear>2009</inceptionYear>
+
+	<properties>
+		<!--		<flexunit.version>4.0-rc-1</flexunit.version>-->
+		<flexunit.version>0.90</flexunit.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>playerglobal</artifactId>
+			<classifier>${flashplayer.version.major}</classifier>
+			<type>swc</type>
+		</dependency>
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>framework</artifactId>
+			<version>${flex-sdk.version}</version>
+			<type>rb.swc</type>
+			<scope>external</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>framework</artifactId>
+			<version>${flex-sdk.version}</version>
+			<type>swc</type>
+			<scope>external</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>flex</artifactId>
+			<type>swc</type>
+		</dependency>
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>rpc</artifactId>
+			<type>rb.swc</type>
+		</dependency>
+		<dependency>
+			<groupId>com.adobe.flex.framework</groupId>
+			<artifactId>rpc</artifactId>
+			<type>swc</type>
+		</dependency>
+
+		<dependency>
+			<groupId>org.as3commons</groupId>
+			<artifactId>as3commons-logging</artifactId>
+			<type>swc</type>
+			<exclusions>
+				<exclusion>
+					<groupId>com.adobe.flex.framework</groupId>
+					<artifactId>flex-framework</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.adobe.flexunit</groupId>
+			<artifactId>flexunit</artifactId>
+			<type>swc</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.sonatype.flexmojos</groupId>
+				<artifactId>flexmojos-maven-plugin</artifactId>
+				<version>${flexmojos.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
