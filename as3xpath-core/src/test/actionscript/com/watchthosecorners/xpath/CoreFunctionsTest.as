@@ -9,7 +9,7 @@ import flexunit.framework.TestCase;
 import mx.logging.ILogger;
 import mx.logging.Log;
 
-public class CoreFunctionsTests extends TestCase
+public class CoreFunctionsTest extends TestCase
 {
 	//--------------------------------------------------------------------------
 	//
@@ -42,7 +42,7 @@ public class CoreFunctionsTests extends TestCase
 	/**
 	 * Constructor.
 	 */	
-	public function CoreFunctionsTests(methodName:String=null)
+	public function CoreFunctionsTest(methodName:String=null)
 	{
 		super(methodName);
 	}

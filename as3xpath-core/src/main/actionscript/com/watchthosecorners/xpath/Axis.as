@@ -755,6 +755,10 @@ class AxisDirection
 	
 	public var FORWARD:int										= 0;
 	public var REVERSE:int										= 1;
+	
+	public function AxisDirection()
+	{
+	}
 }
 
 class AxisNames
@@ -778,4 +782,8 @@ class AxisNames
 	public var ATTRIBUTE:String 				= "attribute";  				
 	public var NAMESPACE:String 				= "namespace";  				
 	public var SELF:String 						= "self";  	
+	
+	public function AxisNames()
+	{
+	}
 }

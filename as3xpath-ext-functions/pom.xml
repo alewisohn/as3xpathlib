@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<parent>
 		<groupId>com.watchthosecorners.xpath</groupId>
 		<artifactId>as3xpath-superpom</artifactId>
-		<version>1.0.1</version>
+		<version>1.1.0</version>
 	</parent>
 	
 	<modelVersion>4.0.0</modelVersion>
@@ -14,7 +15,7 @@
 	<artifactId>as3xpath-ext-functions</artifactId>
 	<packaging>swc</packaging>
 	<version>1.1.0</version>
-	<name>AS3 XPath Extension Functions</name>
+	<name>AS3 XPath Extension Function Library</name>
 	<description>AS3 XPath Extension Function Library</description>
 	<inceptionYear>2009</inceptionYear>
 
@@ -55,17 +56,6 @@
 			<type>swc</type>
 		</dependency>
 
-		<dependency>
-			<groupId>org.as3commons</groupId>
-			<artifactId>as3commons-lang</artifactId>
-			<type>swc</type>
-			<exclusions>
-				<exclusion>
-					<groupId>com.adobe.flex.framework</groupId>
-					<artifactId>flex-framework</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
 		<dependency>
 			<groupId>org.as3commons</groupId>
 			<artifactId>as3commons-logging</artifactId>
