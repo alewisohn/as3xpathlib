@@ -4,15 +4,15 @@
 	<groupId>com.watchthosecorners.xpath</groupId>
 	<artifactId>as3xpath-superpom</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0.1</version>
-	<name>AS3 XPath Library Base</name>
+	<version>1.1.0</version>
+	<name>AS3 XPath Library</name>
 	<inceptionYear>2010</inceptionYear>
-	
+
 	<modules>
 		<module>as3xpath-core</module>
 		<module>as3xpath-ext-functions</module>
 	</modules>
-	
+
 	<developers>
 		<developer>
 			<id>alewisohn</id>
@@ -27,8 +27,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<flexmojos.version>3.5.0</flexmojos.version>
-		<!--		<flexunit.version>4.0-rc-1</flexunit.version>-->
-		<flexunit.version>0.90</flexunit.version>
+		<flexunit.version>4.0-rc-1</flexunit.version>
 		<flex-sdk.version>3.2.0.3958</flex-sdk.version>
 		<!--		<flex-sdk.version>3.4.0.9271</flex-sdk.version>-->
 		<flashplayer.version.major>9</flashplayer.version.major>
@@ -89,106 +88,108 @@
 		</pluginRepository>
 	</pluginRepositories>
 
-	<dependencies>
-		<!-- =========================== -->
-		<!-- flex-framework dependencies -->
-		<!-- =========================== -->
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>applicationupdater</artifactId>
-			<version>${flex-sdk.version}</version>
-			<type>swc</type>
-		</dependency>
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>applicationupdater_ui</artifactId>
-			<version>${flex-sdk.version}</version>
-			<type>swc</type>
-		</dependency>
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>playerglobal</artifactId>
-			<version>${flex-sdk.version}</version>
-			<classifier>${flashplayer.version.major}</classifier>
-			<type>swc</type>
-			<scope>external</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>flex</artifactId>
-			<version>${flex-sdk.version}</version>
-			<type>swc</type>
-			<scope>external</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>framework</artifactId>
-			<version>${flex-sdk.version}</version>
-			<type>rb.swc</type>
-			<scope>external</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>framework</artifactId>
-			<version>${flex-sdk.version}</version>
-			<type>zip</type>
-			<classifier>configs</classifier>
-			<scope>external</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>framework</artifactId>
-			<version>${flex-sdk.version}</version>
-			<type>swc</type>
-			<scope>external</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>rpc</artifactId>
-			<version>${flex-sdk.version}</version>
-			<type>rb.swc</type>
-			<scope>external</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>rpc</artifactId>
-			<version>${flex-sdk.version}</version>
-			<type>swc</type>
-			<scope>external</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>utilities</artifactId>
-			<version>${flex-sdk.version}</version>
-			<type>swc</type>
-			<scope>external</scope>
-		</dependency>
-		
-		<!-- ================== -->
-		<!-- Other dependencies -->
-		<!-- ================== -->
-		<dependency>
-			<groupId>com.watchthosecorners.xpath</groupId>
-			<artifactId>as3xpathlib</artifactId>
-			<version>1.0.1</version>
-			<type>swc</type>
-			<scope>external</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.as3commons</groupId>
-			<artifactId>as3commons-logging</artifactId>
-			<version>1.1</version>
-			<type>swc</type>
-			<scope>external</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.adobe.flexunit</groupId>
-			<artifactId>flexunit</artifactId>
-			<version>${flexunit.version}</version>
-			<type>swc</type>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<!-- =========================== -->
+			<!-- flex-framework dependencies -->
+			<!-- =========================== -->
+			<dependency>
+				<groupId>com.adobe.flex.framework</groupId>
+				<artifactId>applicationupdater</artifactId>
+				<version>${flex-sdk.version}</version>
+				<type>swc</type>
+			</dependency>
+			<dependency>
+				<groupId>com.adobe.flex.framework</groupId>
+				<artifactId>applicationupdater_ui</artifactId>
+				<version>${flex-sdk.version}</version>
+				<type>swc</type>
+			</dependency>
+			<dependency>
+				<groupId>com.adobe.flex.framework</groupId>
+				<artifactId>playerglobal</artifactId>
+				<version>${flex-sdk.version}</version>
+				<classifier>${flashplayer.version.major}</classifier>
+				<type>swc</type>
+				<scope>external</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.adobe.flex.framework</groupId>
+				<artifactId>flex</artifactId>
+				<version>${flex-sdk.version}</version>
+				<type>swc</type>
+				<scope>external</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.adobe.flex.framework</groupId>
+				<artifactId>framework</artifactId>
+				<version>${flex-sdk.version}</version>
+				<type>rb.swc</type>
+				<scope>external</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.adobe.flex.framework</groupId>
+				<artifactId>framework</artifactId>
+				<version>${flex-sdk.version}</version>
+				<type>zip</type>
+				<classifier>configs</classifier>
+				<scope>external</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.adobe.flex.framework</groupId>
+				<artifactId>framework</artifactId>
+				<version>${flex-sdk.version}</version>
+				<type>swc</type>
+				<scope>external</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.adobe.flex.framework</groupId>
+				<artifactId>rpc</artifactId>
+				<version>${flex-sdk.version}</version>
+				<type>rb.swc</type>
+				<scope>external</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.adobe.flex.framework</groupId>
+				<artifactId>rpc</artifactId>
+				<version>${flex-sdk.version}</version>
+				<type>swc</type>
+				<scope>external</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.adobe.flex.framework</groupId>
+				<artifactId>utilities</artifactId>
+				<version>${flex-sdk.version}</version>
+				<type>swc</type>
+				<scope>external</scope>
+			</dependency>
+
+			<!-- ================== -->
+			<!-- Other dependencies -->
+			<!-- ================== -->
+			<dependency>
+				<groupId>com.watchthosecorners.xpath</groupId>
+				<artifactId>as3xpathlib</artifactId>
+				<version>1.0.1</version>
+				<type>swc</type>
+				<scope>external</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.as3commons</groupId>
+				<artifactId>as3commons-logging</artifactId>
+				<version>1.1</version>
+				<type>swc</type>
+				<scope>external</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.adobe.flexunit</groupId>
+				<artifactId>flexunit</artifactId>
+				<version>${flexunit.version}</version>
+				<type>swc</type>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<sourceDirectory>src/main/actionscript</sourceDirectory>
@@ -259,8 +260,8 @@
 
 	<reporting>
 		<plugins>
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
 			</plugin>
 			<plugin>
@@ -271,7 +272,38 @@
 			<plugin>
 				<groupId>org.sonatype.flexmojos</groupId>
 				<artifactId>flexmojos-maven-plugin</artifactId>
-				<version>%{flexmojos.version}</version>
+				<version>${flexmojos.version}</version>
+				<reportSets>
+					<reportSet>
+						<id>flex-reports</id>
+						<reports>
+							<report>asdoc-report</report>
+						</reports>
+						<configuration>
+							<reportOutputDirectory>
+								target/site/docs/asdoc
+							</reportOutputDirectory>
+							<!--<configFile>
+								asdoc-config.xml
+							</configFile> -->
+							<footer>
+								Copyright 2009-2010 Andrew Lewisohn
+							</footer>
+							<description>
+								API documentation for the AS3 XPath library
+							</description>
+							<mainTitle>
+								AS3 XPath API documentation
+							</mainTitle>
+							<windowTitle>
+								AS3 XPath API documentation
+							</windowTitle>
+							<name>
+								AS3XPathASDocs
+							</name>
+						</configuration>
+					</reportSet>
+				</reportSets>
 			</plugin>
 		</plugins>
 	</reporting>

@@ -9,7 +9,7 @@ import flexunit.framework.TestCase;
 import mx.logging.ILogger;
 import mx.logging.Log;
 
-public class AxisTests extends TestCase
+public class AxisTest extends TestCase
 {
 	//--------------------------------------------------------------------------
 	//
@@ -43,7 +43,7 @@ public class AxisTests extends TestCase
 	/**
 	 * Constructor.
 	 */	
-	public function AxisTests(methodName:String=null)
+	public function AxisTest(methodName:String=null)
 	{
 		super(methodName);
 	}

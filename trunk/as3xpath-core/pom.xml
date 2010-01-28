@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.watchthosecorners.xpath</groupId>
 		<artifactId>as3xpath-superpom</artifactId>
-		<version>1.0.1</version>
+		<version>1.1.0</version>
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
@@ -12,11 +12,15 @@
 	<groupId>com.watchthosecorners.xpath</groupId>
 	<artifactId>as3xpath-core</artifactId>
 	<packaging>swc</packaging>
-	<version>1.0.1</version>
-	<name>as3xpathlib</name>
+	<version>1.1.0</version>
+	<name>AS3 XPath Core Library</name>
 	<description>AS3 XPath Core Library</description>
 	<inceptionYear>2009</inceptionYear>
 
+	<properties>
+		<flexunit.version>0.90</flexunit.version>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.adobe.flex.framework</groupId>
@@ -54,17 +58,6 @@
 			<type>swc</type>
 		</dependency>
 
-		<dependency>
-			<groupId>org.as3commons</groupId>
-			<artifactId>as3commons-lang</artifactId>
-			<type>swc</type>
-			<exclusions>
-				<exclusion>
-					<groupId>com.adobe.flex.framework</groupId>
-					<artifactId>flex-framework</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
 		<dependency>
 			<groupId>org.as3commons</groupId>
 			<artifactId>as3commons-logging</artifactId>

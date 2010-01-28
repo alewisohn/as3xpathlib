@@ -29,5 +29,9 @@ public class FunctionContextDefaults
 	public const CONTEXT_NODE:int = 0;
 	public const CONTEXT_NODESET:int = 1;
 	public const CONTEXT_STRING:int = 2;
+	
+	public function FunctionContextDefaults()
+	{
+	}
 }
 }

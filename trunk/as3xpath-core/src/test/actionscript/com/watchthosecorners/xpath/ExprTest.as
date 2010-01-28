@@ -9,7 +9,7 @@ import flexunit.framework.TestCase;
 import mx.logging.ILogger;
 import mx.logging.Log;
 
-public class ExprTests extends TestCase
+public class ExprTest extends TestCase
 {
 	//--------------------------------------------------------------------------
 	//
@@ -41,7 +41,7 @@ public class ExprTests extends TestCase
 	/**
 	 * Constructor.
 	 */	
-	public function ExprTests(methodName:String=null)
+	public function ExprTest(methodName:String=null)
 	{
 		super(methodName);
 	}
