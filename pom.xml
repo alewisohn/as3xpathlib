@@ -35,6 +35,12 @@
 		<flashplayer.version.revision>124</flashplayer.version.revision>
 	</properties>
 
+	<scm>
+		<connection>scm:svn:http://as3xpathlib.googlecode.com/svn</connection>
+		<developerConnection>scm:svn:https://as3xpathlib.googlecode.com/svn/</developerConnection>
+		<url>http://code.google.com/p/as3xpathlib/source/browse/</url>
+	</scm>
+	
 	<repositories>
 		<repository>
 			<id>flex-mojos-repository</id>
