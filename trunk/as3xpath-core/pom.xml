@@ -20,7 +20,7 @@
 	<properties>
 		<flexunit.version>0.90</flexunit.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>com.adobe.flex.framework</groupId>
@@ -79,6 +79,14 @@
 	<build>
 		<plugins>
 			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<tagBase>
+						https://as3xpathlib.googlecode.com/svn/tags/as3xpath-core
+					</tagBase>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.sonatype.flexmojos</groupId>
 				<artifactId>flexmojos-maven-plugin</artifactId>
 				<version>${flexmojos.version}</version>
@@ -87,4 +95,9 @@
 		</plugins>
 	</build>
 
+	<scm>
+		<developerConnection>scm:svn:https://as3xpathlib.googlecode.com/svn/trunk/as3xpath-core</developerConnection>
+		<url>scm:svn:http://as3xpathlib.googlecode.com/svn/trunk/as3xpath-core</url>
+	</scm>
+	
 </project>
