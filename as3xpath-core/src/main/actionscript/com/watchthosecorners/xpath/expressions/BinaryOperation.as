@@ -175,11 +175,11 @@ public class BinaryOperation extends AbstractExpr
 }
 }
 
-import com.watchthosecorners.xpath.NodeSet;
 import com.watchthosecorners.xpath.CoreFunctions;
-import flash.errors.IllegalOperationError;
-import com.watchthosecorners.xpath.FunctionContext;
+import com.watchthosecorners.xpath.NodeSet;
 import com.watchthosecorners.xpath.utils.XMLUtil;
+
+import flash.errors.IllegalOperationError;
 
 interface IOperator
 {

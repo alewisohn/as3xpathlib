@@ -237,9 +237,9 @@ public class Axis
 }
 	
 import com.watchthosecorners.xpath.Axis;
-import com.watchthosecorners.xpath.NodeSet;
-import com.watchthosecorners.xpath.utils.XMLUtil;
 import com.watchthosecorners.xpath.DefaultNamespaces;
+import com.watchthosecorners.xpath.INodeTest;
+import com.watchthosecorners.xpath.NodeSet;
 import com.watchthosecorners.xpath.nodeTests.QNameNodeTest;
 import com.watchthosecorners.xpath.nodeTests.TextNodeTest;
 import com.watchthosecorners.xpath.nodeTests.CommentNodeTest;
@@ -247,7 +247,6 @@ import com.watchthosecorners.xpath.nodeTests.ProcessingInstructionNodeTest;
 import com.watchthosecorners.xpath.nodeTests.NamespaceNodeTest;
 import com.watchthosecorners.xpath.nodeTests.NodeNodeTest;
 import com.watchthosecorners.xpath.nodeTests.StarNodeTest;
-import com.watchthosecorners.xpath.INodeTest;
 
 class Child extends Axis
 {

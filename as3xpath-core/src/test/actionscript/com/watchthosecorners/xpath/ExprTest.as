@@ -234,9 +234,10 @@ public class ExprTest extends TestCase
 		context.removeVariable(a);
 		xpath = new XPath("breakfast-menu/food[$a]/name/text()");
 		var error:Error = null;
+		var result:* = null;
 		try
 		{
-			xpath.evaluate(menu);
+			result = xpath.evaluate(menu);
 		}
 		catch(e:ReferenceError)
 		{
