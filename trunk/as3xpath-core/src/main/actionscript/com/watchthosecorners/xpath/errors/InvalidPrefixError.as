@@ -38,7 +38,7 @@ public class InvalidPrefixError extends XPathError
 	 */
 	public function InvalidPrefixError(contextNode:XML, prefix:String)
 	{
-		super(null, -1);
+		super("", -1);
 		
 		_contextNode = contextNode;
 		_prefix = prefix;

@@ -67,6 +67,14 @@ public class XPath
 	
 	//--------------------------------------------------------------------------
 	//
+	//  Class variables
+	//
+	//--------------------------------------------------------------------------
+	
+	private static var cache:Cache = new Cache();
+	
+	//--------------------------------------------------------------------------
+	//
 	//  Class methods
 	//
 	//--------------------------------------------------------------------------
@@ -275,7 +283,17 @@ public class XPath
 			_context = new EvaluationContext(null);
 		}
 
-		return _expression.evaluate(_context as EvaluationContext);
+		/*if(cache.contains(_expression))
+		{
+			return cache.get(_expression);
+		}*/
+		
+		var result:* = _expression.evaluate(_context as EvaluationContext);
+		/*if(result is NodeSet)
+		{
+			cache.put(_expression, result);
+		}*/
+		return result;
 	}
 	
 	/**
