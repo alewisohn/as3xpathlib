@@ -14,7 +14,16 @@ public class PredicateTest
 	}
 	
 	[Test]
-	public function testFilter():void
+	public function testFilterWithNumericPredicate():void
+	{
+		var xml:XML = XMLData.cdCatalogXML;
+		var result:String = new XPath("/CATALOG/CD[6]/TITLE").evaluate(xml);
+		
+		Assert.assertEquals("One night only", result);
+	}
+	
+	[Test]
+	public function testFilterWithBinaryOperationPredicate():void
 	{
 		var xml:XML = XMLData.cdCatalogXML;
 		var result:String = new XPath("/CATALOG/CD[@id = 'cd6']/TITLE").evaluate(xml);

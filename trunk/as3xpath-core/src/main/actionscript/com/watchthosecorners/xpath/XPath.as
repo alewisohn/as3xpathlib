@@ -23,6 +23,8 @@ package com.watchthosecorners.xpath
 {
 import com.watchthosecorners.xpath.parser.Parser;
 
+import flash.events.Event;
+
 import org.as3commons.logging.ILogger;
 import org.as3commons.logging.LoggerFactory;
 
@@ -64,14 +66,6 @@ public class XPath
 	 * FunctionMap instance containing any custom functions.a
 	 */
 	public static const CUSTOM_FUNCTIONS:FunctionMap = new FunctionMap();
-	
-	//--------------------------------------------------------------------------
-	//
-	//  Class variables
-	//
-	//--------------------------------------------------------------------------
-	
-	private static var cache:Cache = new Cache();
 	
 	//--------------------------------------------------------------------------
 	//
@@ -192,7 +186,7 @@ public class XPath
 			throw new ArgumentError("Argument 'context' must be of type EvaluationContext, XML, or null.");
 		}
 		
-		_context = context as EvaluationContext;
+		setContext(context);
 		_source = source;
 		_expression = parser.parse(source, contextNode);
 	}
@@ -260,15 +254,7 @@ public class XPath
 	//
 	//--------------------------------------------------------------------------
 	
-	/**
-	 * Evaluates an XPath expression.
-	 * 
-	 * @param context The evaluation context for the XPath expression.
-	 * 
-	 * @return The result of the XPath, which is either a string, number, 
-	 * 			boolean, or node-set.
-	 */
-	public function evaluate(context:Object=null):*
+	private function setContext(context:Object):void
 	{
 		if(context is XML)
 		{
@@ -282,18 +268,21 @@ public class XPath
 		{
 			_context = new EvaluationContext(null);
 		}
-
-		/*if(cache.contains(_expression))
-		{
-			return cache.get(_expression);
-		}*/
+	}
+	
+	/**
+	 * Evaluates an XPath expression.
+	 * 
+	 * @param context The evaluation context for the XPath expression.
+	 * 
+	 * @return The result of the XPath, which is either a string, number, 
+	 * 			boolean, or node-set.
+	 */
+	public function evaluate(context:Object=null):*
+	{
+		setContext(context);
 		
-		var result:* = _expression.evaluate(_context as EvaluationContext);
-		/*if(result is NodeSet)
-		{
-			cache.put(_expression, result);
-		}*/
-		return result;
+		return _expression.evaluate(_context as EvaluationContext);
 	}
 	
 	/**
@@ -306,18 +295,7 @@ public class XPath
 	 */
 	public function referencedNodes(context:Object=null):NodeSet
 	{
-		if(context is XML)
-		{
-			_context = new EvaluationContext(context as XML, 1, 1);
-		}
-		else if(context is EvaluationContext)
-		{
-			_context = EvaluationContext(context);
-		}
-		else if(context == null && _context == null)
-		{
-			_context = new EvaluationContext(null);
-		}
+		setContext(context);
 		
 		return _expression.referencedNodes(_context as EvaluationContext);
 	}
