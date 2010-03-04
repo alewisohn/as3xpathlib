@@ -12,7 +12,7 @@
 	<groupId>com.watchthosecorners.xpath</groupId>
 	<artifactId>as3xpath-core</artifactId>
 	<packaging>swc</packaging>
-	<version>1.1.1</version>
+	<version>1.2.0</version>
 	<name>AS3 XPath Core Library</name>
 	<description>AS3 XPath Core Library</description>
 	<inceptionYear>2009</inceptionYear>

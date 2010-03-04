@@ -21,8 +21,10 @@
  */ 
 package com.watchthosecorners.xpath
 {
+import com.watchthosecorners.xpath.expressions.NumberExpr;
+
 [ExcludeClass]
-	
+
 public class Predicate
 {
 	//--------------------------------------------------------------------------
@@ -81,30 +83,44 @@ public class Predicate
 		var result:NodeSet = new NodeSet();
 		var setLen:int = nodeSet.length;
 		
-		for(var i:int = setLen - 1; i >= 0; i--)
+		// If the predicate expression is a numerical value, we are looking for
+		// a node at a particular index. Check to see that the index is in range
+		// and return the node at that index if so.
+		if(_expression is NumberExpr)
 		{
-			var filterContext:EvaluationContext = context.clone();
-			filterContext.node = nodeSet[i];
-			filterContext.size = setLen;
-			filterContext.position = (direction == Axis.Direction.FORWARD ? i + 1 : setLen - i);
-			
-			var value:* = _expression.evaluate(filterContext);
-			var matched:Boolean = value is Number
-									? value == filterContext.position
-									: CoreFunctions.BOOLEAN_FUNCTION.evaluate(value);
-									
-			if(matched)
+			var index:int = _expression.evaluate(context) - 1;
+			if(index > -1 && index < setLen)
 			{
-				result.add(nodeSet[i]);
+				result.add(nodeSet[index]);
 			}
+			return result;
 		}
-		
-		// Since we looped through the list in reverse, we need to reverse again
-		// before returning it.
-		result.reverse();
-		
-		return result;
-		
+		else
+		{
+			for(var i:int = setLen - 1; i >= 0; i--)
+			{
+				var filterContext:EvaluationContext = context.clone();
+				filterContext.node = nodeSet[i];
+				filterContext.size = setLen;
+				filterContext.position = (direction == Axis.Direction.FORWARD ? i + 1 : setLen - i);
+				
+				var value:* = _expression.evaluate(filterContext);
+				var matched:Boolean = value is Number
+										? value == filterContext.position
+										: CoreFunctions.BOOLEAN_FUNCTION.evaluate(value);
+										
+				if(matched)
+				{
+					result.add(nodeSet[i]);
+				}
+			}
+			
+			// Since we looped through the list in reverse, we need to reverse again
+			// before returning it.
+			result.reverse();
+			
+			return result;
+		}
 	}	
 }
 }
