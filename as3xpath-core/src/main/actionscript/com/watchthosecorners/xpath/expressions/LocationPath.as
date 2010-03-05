@@ -127,7 +127,7 @@ public class LocationPath extends AbstractExpr
 		var nodeSet:NodeSet;
 		var contextNode:XML;
 		
-		if(context.node == null)
+		if(context.node === null)
 		{
 			nodeSet = new NodeSet();
 		}

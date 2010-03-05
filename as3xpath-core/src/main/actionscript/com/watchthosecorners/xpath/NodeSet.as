@@ -63,7 +63,7 @@ public dynamic class NodeSet extends Array
 	 */
 	public function add(node:Object):void
 	{
-		if(node != null && !contains(node))
+		if(node !== null && !contains(node))
 		{
 			push(node);
 		}
@@ -88,7 +88,7 @@ public dynamic class NodeSet extends Array
 	 */
 	public function addUnique(node:Object):NodeSet
 	{
-		if(node != null)
+		if(node !== null)
 		{
 			push(node);
 		}

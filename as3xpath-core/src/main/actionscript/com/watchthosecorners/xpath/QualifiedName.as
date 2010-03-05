@@ -55,7 +55,7 @@ public class QualifiedName
 				}
 				else
 				{
-					if(contextNode == null)
+					if(contextNode === null)
 					{
 						contextNode = EvaluationContext.defaultContextNode;
 					}
@@ -177,7 +177,7 @@ public class QualifiedName
 		var qname:QName;
 		if(_namespaceURI)
 			qname = new QName(_namespaceURI, _localName);
-		else if(node.namespace())
+		else if(node.namespace().uri != "")
 			qname = new QName(node.namespace().uri, _localName);
 		else
 			qname = new QName(_localName);

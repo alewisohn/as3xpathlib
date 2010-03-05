@@ -12,6 +12,7 @@ Changes in version 1.2.0 (03.03.2010)
 
 General
 * Optimized Predicate filters that operate on a NumberExpr.
+* Fixed instances of XML == null where XML was an attribute with a value of "null", now uses strict equality to evaluate true nullness.
 
 Changes in version 1.0.1 (01.28.2010)
 ---------------------------------
