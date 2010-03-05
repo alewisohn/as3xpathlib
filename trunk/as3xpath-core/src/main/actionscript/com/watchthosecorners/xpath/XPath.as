@@ -158,7 +158,7 @@ public class XPath
 			throw new Error("Unable to initialize Axis implementations.");
 		
 		var contextNode:XML;
-		if(context == null)
+		if(context === null)
 		{
 			contextNode = EvaluationContext.defaultContextNode;
 			context = new EvaluationContext(null);
