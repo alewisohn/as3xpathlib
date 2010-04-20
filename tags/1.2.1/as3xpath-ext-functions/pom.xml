@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<parent>
+		<groupId>com.watchthosecorners.xpath</groupId>
+		<artifactId>as3xpath-project</artifactId>
+		<version>1.2.1</version>
+	</parent>
+	
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.watchthosecorners.xpath</groupId>
+	<artifactId>as3xpath-ext-functions</artifactId>
+	<packaging>swc</packaging>
+	<name>AS3 XPath Extension Function Library</name>
+	<description>AS3 XPath Extension Function Library</description>
+	<inceptionYear>2009</inceptionYear>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.watchthosecorners.xpath</groupId>
+			<artifactId>as3xpath-core</artifactId>
+			<version>${project.version}</version>
+			<type>swc</type>
+			<scope>compile</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.sonatype.flexmojos</groupId>
+				<artifactId>flexmojos-maven-plugin</artifactId>
+				<version>${flexmojos.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
