@@ -25,7 +25,7 @@
 			<artifactId>as3xpath-core</artifactId>
 			<version>${project.version}</version>
 			<type>swc</type>
-			<scope>compile</scope>
+			<scope>external</scope>
 		</dependency>
 
 	</dependencies>
