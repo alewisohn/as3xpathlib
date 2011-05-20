@@ -23,6 +23,14 @@ public class FunctionsTest {
 	}
 	
 	[Test]
+	public function testInteger():void {
+		Assert.assertEquals(1, XPath.evaluate("fn:integer(1.5)", null));
+		Assert.assertEquals(-1, XPath.evaluate("fn:integer(-1.5)", null));
+		Assert.assertEquals(10, XPath.evaluate("fn:integer(10.35)", null));
+		Assert.assertEquals(-10, XPath.evaluate("fn:integer(-10.35)", null));
+	}
+	
+	[Test]
 	public function testLeft():void {
 		Assert.assertEquals("browns", XPath.evaluate("fn:left('brownsrule', 6)", null));
 		Assert.assertEquals("jets", XPath.evaluate("fn:left('jetsrule', 4)", null));

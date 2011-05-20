@@ -24,6 +24,7 @@ public class Functions {
 	//
 	//--------------------------------------------------------------------------
 	
+	public static var INTEGER:FunctionContext;
 	public static var LEFT:FunctionContext;
 	public static var LOWER_CASE:FunctionContext;
 	public static var LTRIM:FunctionContext;
@@ -50,6 +51,7 @@ public class Functions {
 			
 			EvaluationContext.defaultContextNode.addNamespace(new Namespace("fn", "http://www.w3.org/2005/xpath-functions"));
 			
+			INTEGER	        = new FunctionContext(integer, false);
 			LEFT	 		= new FunctionContext(left, false);
 			LOWER_CASE 		= new FunctionContext(lowerCase, false);
 			LTRIM			= new FunctionContext(ltrim, false);
@@ -60,6 +62,7 @@ public class Functions {
 			TRIM			= new FunctionContext(trim, false);
 			UPPER_CASE		= new FunctionContext(upperCase, false);
 			
+			XPath.CORE_FUNCTIONS.registerFunction(new QualifiedName("fn:integer"), 			INTEGER);
 			XPath.CORE_FUNCTIONS.registerFunction(new QualifiedName("fn:left"),				LEFT);
 			XPath.CORE_FUNCTIONS.registerFunction(new QualifiedName("fn:lower-case"),		LOWER_CASE);
 			XPath.CORE_FUNCTIONS.registerFunction(new QualifiedName("fn:ltrim"),			LTRIM);
@@ -77,6 +80,10 @@ public class Functions {
 	//  Class methods: Functions
 	//
 	//--------------------------------------------------------------------------
+	
+	private static function integer(value:String):int {
+		return parseInt(value);	
+	}
 	
 	private static function left(string:String, length:int):String {
 		if (string != null) {
