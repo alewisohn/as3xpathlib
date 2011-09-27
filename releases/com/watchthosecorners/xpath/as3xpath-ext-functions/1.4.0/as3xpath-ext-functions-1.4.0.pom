@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<parent>
+		<groupId>com.watchthosecorners.xpath</groupId>
+		<artifactId>as3xpath-project</artifactId>
+		<version>1.4.0</version>
+	</parent>
+	
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.watchthosecorners.xpath</groupId>
+	<artifactId>as3xpath-ext-functions</artifactId>
+	<packaging>swc</packaging>
+	<name>AS3 XPath Extension Function Library</name>
+	<description>AS3 XPath Extension Function Library</description>
+	<inceptionYear>2009</inceptionYear>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.watchthosecorners.xpath</groupId>
+			<artifactId>as3xpath-core</artifactId>
+			<version>${project.version}</version>
+			<type>swc</type>
+			<scope>runtime</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.sonatype.flexmojos</groupId>
+				<artifactId>flexmojos-maven-plugin</artifactId>
+				<version>${flexmojos.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+         		<version>2.4</version>
+         		<executions>
+					<execution>
+						<id>clean-lib-directory</id>
+						<phase>pre-clean</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+						<configuration>
+							<excludeDefaultDirectories>true</excludeDefaultDirectories>
+							<filesets>
+								<fileset>
+									<directory>lib</directory>
+									<includes>
+										<include>*.swc</include>
+									</includes>
+								</fileset>
+							</filesets>
+						</configuration>
+					</execution>
+				</executions>
+         	</plugin>
+         	<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin
+				</artifactId>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>clean</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>lib</outputDirectory>
+							<excludeGroupIds>com.adobe.flex.framework</excludeGroupIds>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
